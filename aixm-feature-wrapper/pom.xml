@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>org.n52.wps</groupId>
+	<artifactId>aviation-4-wps</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>aixm-feature-wrapper</artifactId>
+  <packaging>jar</packaging>
+  <description>Bindings for a helper schema to support the AGS bridge</description>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xmlbeans-maven-plugin</artifactId>
+                <configuration>
+                	<schemaDirectory>src/main/xsd</schemaDirectory>
+                    <sourceSchemas>
+						<sourceSchema>AIXMFeatureWrapperSchema.xsd</sourceSchema>
+                    </sourceSchemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <dependencies>
+    	<dependency>
+    		<groupId>org.n52.sensorweb</groupId>
+    		<artifactId>52n-xml-gml-v321</artifactId>
+    	</dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example describes a buffer command that accepts polygon coordinates 
+	in GML, and used a buffer distance in meters to produce a buffered polygon 
+	feature, which is output in GML, in either UTF-8 or base64 encoding. The 
+	polygon can be returned directly as output, or stored by the service as a 
+	web-accessible resource. Ongoing processing status reports are not available. -->
+<wps:ProcessDescriptions xmlns:wps="http://www.opengis.net/wps/1.0.0"
+	xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/wps/1.0.0
+http://schemas.opengis.net/wps/1.0.0/wpsDescribeProcess_response.xsd"
+	xml:lang="en-US" service="WPS" version="1.0.0">
+	<ProcessDescription wps:processVersion="1.0.0"
+		storeSupported="false" statusSupported="false">
+		<ows:Identifier>AIXMIntersection</ows:Identifier>
+		<ows:Title>Calculate Airspace-Route Intersection</ows:Title>
+		<ows:Abstract>
+      Calculates the intersection points for two given AIXM features.
+    </ows:Abstract>
+		<ows:Metadata xlink:title="spatial" />
+		<ows:Metadata xlink:title="intersects" />
+		<ows:Metadata xlink:title="AIXM" />
+		<ows:Metadata xlink:title="GML" />
+		<DataInputs>
+			<Input minOccurs="2" maxOccurs="2">
+				<ows:Identifier>Feature</ows:Identifier>
+				<ows:Title>Input Feature</ows:Title>
+				<ows:Abstract>The input features.</ows:Abstract>
+				<ComplexData>
+					<Default>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Default>
+					<Supported>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Supported>
+				</ComplexData>
+			</Input>
+		</DataInputs>
+		<ProcessOutputs>
+			<Output>
+				<ows:Identifier>Result</ows:Identifier>
+				<ows:Title>Multipoint geometry</ows:Title>
+				<ows:Abstract>The output, defined as a GML3.2 MultiPoint element. If no intersections occurred,
+          the MultiPoint will be empty.
+        </ows:Abstract>
+				<ComplexOutput>
+					<Default>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://test.schemas.opengis.net/ows-9/aviation/wps/aixmIntersectionResult.xsd</Schema>
+						</Format>
+					</Default>
+					<Supported>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://test.schemas.opengis.net/ows-9/aviation/wps/aixmIntersectionResult.xsd</Schema>
+						</Format>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://schemas.opengis.net/gml/3.2.1/geometryAggregates.xsd</Schema>
+						</Format>
+					</Supported>
+				</ComplexOutput>
+			</Output>
+		</ProcessOutputs>
+	</ProcessDescription>
+
+</wps:ProcessDescriptions>

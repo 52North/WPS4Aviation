@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example describes a buffer command that accepts polygon coordinates 
+	in GML, and used a buffer distance in meters to produce a buffered polygon 
+	feature, which is output in GML, in either UTF-8 or base64 encoding. The 
+	polygon can be returned directly as output, or stored by the service as a 
+	web-accessible resource. Ongoing processing status reports are not available. -->
+<wps:ProcessDescriptions xmlns:wps="http://www.opengis.net/wps/1.0.0"
+	xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.opengis.net/wps/1.0.0
+http://schemas.opengis.net/wps/1.0.0/wpsDescribeProcess_response.xsd"
+	xml:lang="en-US" service="WPS" version="1.0.0">
+	<ProcessDescription wps:processVersion="1.0.0"
+		storeSupported="false" statusSupported="false">
+		<ows:Identifier>Disjoint</ows:Identifier>
+		<ows:Title>AIXM features Disjoint method</ows:Title>
+		<ows:Abstract>
+      Performs a Disjoint test for the two given features. Checks whether the first feature 
+      Disjoint the second feature.
+    </ows:Abstract>
+		<ows:Metadata xlink:title="spatial" />
+		<ows:Metadata xlink:title="touches" />
+		<ows:Metadata xlink:title="AIXM" />
+		<DataInputs>
+			<Input minOccurs="1" maxOccurs="1">
+				<ows:Identifier>Feature1</ows:Identifier>
+				<ows:Title>Input Feature 1</ows:Title>
+				<ows:Abstract>The first input feature.</ows:Abstract>
+				<ComplexData>
+					<Default>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Default>
+					<Supported>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Supported>
+				</ComplexData>
+			</Input>
+			<Input minOccurs="1" maxOccurs="1">
+				<ows:Identifier>Feature2</ows:Identifier>
+				<ows:Title>Input Feature 2</ows:Title>
+				<ows:Abstract>The second input feature.</ows:Abstract>
+				<ComplexData>
+					<Default>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Default>
+					<Supported>
+						<Format>
+							<MimeType>text/xml</MimeType>
+							<Schema>http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd</Schema>
+						</Format>
+					</Supported>
+				</ComplexData>
+			</Input>
+		</DataInputs>
+		<ProcessOutputs>
+			<Output>
+				<ows:Identifier>Result</ows:Identifier>
+				<ows:Title>Disjoint test result.</ows:Title>
+				<ows:Abstract>
+          Returns a literal boolean which determines whether or not the first input feature Disjoint
+          the second input feature.
+        </ows:Abstract>
+				<LiteralOutput>
+					<ows:DataType ows:reference="xs:boolean" />
+				</LiteralOutput>
+			</Output>
+		</ProcessOutputs>
+	</ProcessDescription>
+
+</wps:ProcessDescriptions>

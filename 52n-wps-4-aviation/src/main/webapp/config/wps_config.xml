@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WPSConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://n52.org/wps schema_v2.xsd" xmlns="http://n52.org/wps">
+	<Datahandlers>
+		<ParserList>
+			<Parser name="GML3BasicParser"
+				className="org.n52.wps.io.datahandler.parser.GML3BasicParser"
+				active="true">
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.0"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.1"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.0"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.1"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+			</Parser>
+			<Parser name="GML32BasicParser"
+				className="org.n52.wps.io.datahandler.parser.GML32BasicParser" active="true">
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.2.1"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+			</Parser>
+			<Parser name="AIXM51BasicParser"
+				className="org.n52.wps.aviation.aixm.AIXM51BasicParser" active="true">
+				<Format mimetype="text/xml"
+					schema="http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd" />
+				<Format mimetype="text/xml; subtype=aixm/5.1"
+					schema="http://www.aixm.aero/gallery/content/public/schema/5.1/AIXM_Features.xsd" />
+			</Parser>
+			<Parser name="GenericFileParser"
+				className="org.n52.wps.io.datahandler.parser.GenericFileParser"
+				active="true">
+				<Format mimetype="application/x-zipped-shp" />
+				<Format mimetype="application/img" />
+				<Format mimetype="image/tiff" />
+				<Format mimetype="application/geotiff" />
+				<Format mimetype="application/dbase" />
+				<Format mimetype="application/remap" />
+				<Format mimetype="application/x-erdas-hfa" />
+				<Format mimetype="application/x-netcdf" />
+				<Format mimetype="application/dgn" />
+				<Format mimetype="image/jpeg" />
+				<Format mimetype="image/png" />
+				<Format mimetype="application/x-geotiff" />
+				<Format mimetype="application/hdf4-eos" />
+				<Format mimetype="text/plain" />
+
+				<Format mimetype="application/x-zipped-shp" encoding="base64" />
+				<Format mimetype="application/img" encoding="base64" />
+				<Format mimetype="image/tiff" encoding="base64" />
+				<Format mimetype="application/geotiff" encoding="base64" />
+				<Format mimetype="application/dbase" encoding="base64" />
+				<Format mimetype="application/remap" encoding="base64" />
+				<Format mimetype="application/x-erdas-hfa" encoding="base64" />
+				<Format mimetype="application/x-netcdf" encoding="base64" />
+				<Format mimetype="application/dgn" encoding="base64" />
+				<Format mimetype="image/jpeg" encoding="base64" />
+				<Format mimetype="image/png" encoding="base64" />
+				<Format mimetype="application/x-geotiff" encoding="base64" />
+				<Format mimetype="application/hdf4-eos" encoding="base64" />
+				<Format mimetype="text/plain" encoding="base64" />
+			</Parser>
+			<Parser name="GenericRasterFileParser"
+				className="org.n52.wps.io.datahandler.parser.GenericRasterFileParser"
+				active="false">
+				<Format mimetype="application/img" encoding="base64" />
+				<Format mimetype="image/tiff" encoding="base64" />
+				<Format mimetype="image/geotiff" encoding="base64" />
+				<Format mimetype="application/geotiff" encoding="base64" />
+				<Format mimetype="application/dbase" encoding="base64" />
+				<Format mimetype="application/remap" encoding="base64" />
+				<Format mimetype="application/x-erdas-hfa" encoding="base64" />
+				<Format mimetype="application/x-netcdf" encoding="base64" />
+				<Format mimetype="application/dgn" encoding="base64" />
+				<Format mimetype="image/jpeg" encoding="base64" />
+				<Format mimetype="image/png" encoding="base64" />
+				<Format mimetype="application/x-geotiff" encoding="base64" />
+				<Format mimetype="application/hdf4-eos" encoding="base64" />
+				<Format mimetype="text/plain" encoding="base64" />
+
+				<Format mimetype="application/img" />
+				<Format mimetype="image/tiff" />
+				<Format mimetype="image/geotiff" />
+				<Format mimetype="application/geotiff" />
+				<Format mimetype="application/dbase" />
+				<Format mimetype="application/remap" />
+				<Format mimetype="application/x-erdas-hfa" />
+				<Format mimetype="application/x-netcdf" />
+				<Format mimetype="application/dgn" />
+				<Format mimetype="image/jpeg" />
+				<Format mimetype="image/png" />
+				<Format mimetype="application/x-geotiff" />
+				<Format mimetype="application/hdf4-eos" />
+				<Format mimetype="text/plain" />
+			</Parser>
+			<Parser name="GTBinZippedSHPParser"
+				className="org.n52.wps.io.datahandler.parser.GTBinZippedSHPParser"
+				active="true">
+				<Format mimetype="application/x-zipped-shp" encoding="base64" />
+
+				<Format mimetype="application/x-zipped-shp" />
+			</Parser>
+			<Parser name="GML3BasicParser4Files"
+				className="org.n52.wps.io.datahandler.parser.GML3BasicParser4Files"
+				active="true">
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.0"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.1"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.0"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.1"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.2.1"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+			</Parser>
+		</ParserList>
+		<GeneratorList>
+			<Generator name="GML3BasicGenerator"
+				className="org.n52.wps.io.datahandler.generator.GML3BasicGenerator"
+				active="true">
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.0"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.1"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.0"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.1"
+					schema="http://schemas.opengis.net/gml/3.1.1/base/feature.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.2.1"
+					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+				<Property name="featureTransformerIncludeBounding" active="true">false</Property>
+				<Property name="featureTransformerDecimalPlaces" active="true">4</Property>
+			</Generator>
+			<Generator name="GML32MultiGeometryGenerator"
+				className="org.n52.wps.io.datahandler.generator.GML32MultiGeometryGenerator"
+				active="true">
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.2.1/geometryAggregates.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://test.schemas.opengis.net/ows-9/aviation/wps/aixmIntersectionResult.xsd" />
+			</Generator>
+			<Generator name="GTBinZippedSHPGenerator"
+				className="org.n52.wps.io.datahandler.generator.GTBinZippedSHPGenerator"
+				active="true">
+				<Format mimetype="application/x-zipped-shp" encoding="base64" />
+				<Format mimetype="text/xml" encoding="base64" />
+
+				<Format mimetype="application/x-zipped-shp" />
+				<Format mimetype="text/xml" />
+			</Generator>
+			<Generator name="GenericFileGenerator"
+				className="org.n52.wps.io.datahandler.generator.GenericFileGenerator"
+				active="true">
+				<Format mimetype="application/x-zipped-shp" encoding="base64" />
+				<Format mimetype="application/shp" encoding="base64" />
+				<Format mimetype="application/img" encoding="base64" />
+				<Format mimetype="image/tiff" encoding="base64" />
+				<Format mimetype="image/geotiff" encoding="base64" />
+				<Format mimetype="application/geotiff" encoding="base64" />
+				<Format mimetype="application/dbase" encoding="base64" />
+				<Format mimetype="application/remap" encoding="base64" />
+				<Format mimetype="application/x-erdas-hfa" encoding="base64" />
+				<Format mimetype="application/x-netcdf" encoding="base64" />
+				<Format mimetype="application/dgn" encoding="base64" />
+				<Format mimetype="image/jpeg" encoding="base64" />
+				<Format mimetype="image/png" encoding="base64" />
+				<Format mimetype="application/x-geotiff" encoding="base64" />
+				<Format mimetype="text/plain" encoding="base64" />
+
+				<Format mimetype="application/x-zipped-shp" />
+				<Format mimetype="application/shp" />
+				<Format mimetype="application/img" />
+				<Format mimetype="image/tiff" />
+				<Format mimetype="image/geotiff" />
+				<Format mimetype="application/geotiff" />
+				<Format mimetype="application/dbase" />
+				<Format mimetype="application/remap" />
+				<Format mimetype="application/x-erdas-hfa" />
+				<Format mimetype="application/x-netcdf" />
+				<Format mimetype="application/dgn" />
+				<Format mimetype="image/jpeg" />
+				<Format mimetype="image/png" />
+				<Format mimetype="application/x-geotiff" />
+				<Format mimetype="text/plain" />
+			</Generator>
+		</GeneratorList>
+	</Datahandlers>
+	<AlgorithmRepositoryList>
+		<Repository name="AviationProcessRepository"
+			className="org.n52.wps.aviation.AviationProcessRepository"
+			active="true">
+			<Property name="SpatialAnalysisProviderClassName" active="true">org.n52.wps.ags.AGSAnalysisViaWorkspaceProvider</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.AIXMIntersection</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMContains</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMCovers</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMCrosses</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMDisjoint</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMEquals</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMIntersects</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMOverlaps</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMTouches</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.aviation.spatialrelation.AIXMWithin</Property>
+		</Repository>
+		<Repository name="AGSProcessRepository" className="org.n52.wps.ags.AGSProcessRepository"
+			active="false">
+			<Property name="IP" active="true">127.0.0.1</Property>
+			<Property name="DOMAIN" active="true">52NSikaiana</Property>
+			<Property name="USER" active="true">ArcGISWebServices</Property>
+			<Property name="PASS" active="true">2asdf3</Property>
+			<Property name="DCOM_NATIVE" active="true">FALSE</Property>
+			<Property name="WORKSPACEBASE" active="true">C:\arcgisserver\wpsBackendDirectory\executionWorkspace</Property>
+			<Property name="ARCOBJECTSJAR" active="true">C:\Program Files (x86)\ArcGIS\Server10.0\java\lib\arcobjects.jar</Property>
+			<Property name="DESCRIBE_PROCESS_DIR" active="true">C:\arcgisserver\wpsBackendDirectory\builtinToolboxProcesses</Property>
+		</Repository>
+	</AlgorithmRepositoryList>
+	<RemoteRepositoryList />
+	<Server hostname="localhost" hostport="8080"
+		includeDataInputsInResponse="false" computationTimeoutMilliSeconds="5"
+		cacheCapabilites="false" webappPath="${final.war.name}" repoReloadInterval="0">
+		<Database />
+	</Server>
+</WPSConfiguration>

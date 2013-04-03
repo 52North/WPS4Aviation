@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:airspace="http://52north.org/wps/feature/aixm/geometryFeature" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://52north.org/wps/feature/aixm/geometryFeature" elementFormDefault="qualified" version="1.0">
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+	<xs:element name="SurfaceFeature" type="airspace:SurfaceFeatureType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="SurfaceFeatureType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="Geometry" type="gml:SurfacePropertyType"/>
+					<xs:element name="Type" minOccurs="0" maxOccurs="1">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="CurveFeature" type="airspace:CurveFeatureType" substitutionGroup="gml:AbstractFeature"/>
+	<xs:complexType name="CurveFeatureType">
+		<xs:complexContent>
+			<xs:extension base="gml:AbstractFeatureType">
+				<xs:sequence>
+					<xs:element name="Geometry" type="gml:CurvePropertyType"/>
+					<xs:element name="Type" minOccurs="0" maxOccurs="1">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
